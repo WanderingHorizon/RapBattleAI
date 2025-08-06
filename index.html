@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎤 AI Rap Battle Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI RAP BATTLE ROOM</h1>
+            <p>Go bar-for-bar with lyrical titans.</p>
+        </header>
+
+        <div id="battle-log" class="battle-log">
+            <div class="message system-message">
+                <span class="author">SYSTEM</span>
+                <p>Choose your opponent, mode, and beat. Then type your verse and hit "Spit Bars!" to begin.</p>
+            </div>
+        </div>
+
+        <div id="loading-indicator" class="loading-indicator" style="display: none;">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+
+        <form id="battle-form" class="battle-form">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="rapper-select">Opponent</label>
+                    <select id="rapper-select">
+                        <option value="Eminem">Eminem</option>
+                        <option value="Jay-Z">Jay-Z</option>
+                        <option value="Kendrick Lamar">Kendrick Lamar</option>
+                        <option value="Nas">Nas</option>
+                        <option value="Drake">Drake</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="mode-select">Mode</label>
+                    <select id="mode-select">
+                        <option value="Roast Battle">🔥 Roast Battle</option>
+                        <option value="Freestyle">🌀 Freestyle</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="beat-select">Beat Vibe</label>
+                    <select id="beat-select">
+                        <option value="Trap">Trap</option>
+                        <option value="Boom Bap">Boom Bap</option>
+                        <option value="Old School">Old School</option>
+                        <option value="Drill">Drill</option>
+                        <option value="Lofi">Lofi</option>
+                    </select>
+                </div>
+            </div>
+            <textarea id="user-rap-input" placeholder="Type your 4-8 bar verse here..." rows="4"></textarea>
+            <button type="submit">Spit Bars!</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
